@@ -8,21 +8,13 @@
 </head>
 <body>
   <div class="row grow w-100">
-    <div class="col-12 bg-primary py-5">
-      Express Application With Heroku
-    </div>
-    <div class="col-2 bg-info py-5">
-        Navigator
-    </div>
+    <%- partial('./parts/header') %>
+    <%- partial('./parts/navigator') %>
     <div class="main col-10 h-100 py-5">
-        <h4>Main</h4>
+        <h4><%= title %></h4>
         <p class="mb-5">Hello I'm a Web Developer from Japan. Have 4 years work experience in IT Industry.</p> 
     </div>
   </div>
-  <div class="row w-100">
-    <div class="col-12 bg-primary py-5">
-      @<%= creator %>
-    </div>
-  </div>
+  <%- partial('./parts/footer') %>
 </body>
 </html>

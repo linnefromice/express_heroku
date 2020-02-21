@@ -3,9 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Express Application With Heroku</title>
 </head>
 <body>
-  <h1>Hello world! created by <%= creator %></h1>
+  <div class="row grow w-100">
+    <div class="col-12 bg-primary py-5">
+      Express Application With Heroku
+    </div>
+    <div class="col-2 bg-info py-5">
+        Navigator
+    </div>
+    <div class="main col-10 h-100 py-5">
+        <h4>Main</h4>
+        <p class="mb-5">Hello I'm a Web Developer from Japan. Have 4 years work experience in IT Industry.</p> 
+    </div>
+  </div>
+  <div class="row w-100">
+    <div class="col-12 bg-primary py-5">
+      @<%= creator %>
+    </div>
+  </div>
 </body>
 </html>

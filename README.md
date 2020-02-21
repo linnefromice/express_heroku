@@ -6,12 +6,13 @@ express_heroku
 
 ## Local
 
-npm start
+- git push origin master
+- npm start
 
 ## Heroku
 
-git push heroku master
-heroku open
+- git push heroku master
+- heroku open
 
 # Reference
 

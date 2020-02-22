@@ -1,26 +1,26 @@
-{
-  "1": {
+[
+  {
     "title": "Iron Man",
     "date": "20080502"
   } ,
-  "2": {
+  {
     "title": "The Incredible Hulk",
     "date": "20080613"
   },
-  "3": {
+  {
     "title": "Iron Man 2",
     "date": "20100507"
   },
-  "4": {
+  {
     "title": "Thor",
     "date": "20110506"
   },
-  "5": {
+  {
     "title": "Captain America: The First Avenger",
     "date": "20110722"
   },
-  "6": {
+  {
     "title": "Marvel's The Avengers",
     "date": "20120504"
   }
-}
+]

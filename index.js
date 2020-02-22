@@ -22,9 +22,25 @@ app.get('/api/movie', (request, response) => {
   });
 });
 
+app.get('/api/movie/:id', (request, response) => {
+  const selectedId = request.params.id - 1;
+
+  fs.readFile('./data/movie.json', 'utf8', (err, data) => {
+    response.send(JSON.parse(data)[selectedId])
+  });
+})
+
 app.get('/api/character', (request, response) => {
   fs.readFile('./data/character.json', 'utf8', (err, data) => {
     response.send(JSON.parse(data));
+  });
+})
+
+app.get('/api/character/:id', (request, response) => {
+  const selectedId = request.params.id - 1;
+
+  fs.readFile('./data/character.json', 'utf8', (err, data) => {
+    response.send(JSON.parse(data)[selectedId])
   });
 })
 

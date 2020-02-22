@@ -37,10 +37,17 @@ app.get('/api/character', (request, response) => {
 })
 
 app.get('/api/character/:id', (request, response) => {
-  const selectedId = request.params.id - 1;
+  const selectedId = request.params.id;
 
   fs.readFile('./data/character.json', 'utf8', (err, data) => {
-    response.send(JSON.parse(data)[selectedId])
+    const jsonData = JSON.parse(data)
+    for (let dto of jsonData) {
+      if (selectedId == dto.id) {
+        response.send(dto)
+        return
+      }
+    }
+    response.send(jsonData)
   });
 })
 

@@ -22,6 +22,12 @@ app.get('/api/movie', (request, response) => {
   });
 });
 
+app.get('/api/character', (request, response) => {
+  fs.readFile('./data/character.json', 'utf8', (err, data) => {
+    response.send(JSON.parse(data));
+  });
+})
+
 const port = app.get('port');
 app.listen(port, function() {
   console.log("App is running at localhost:" + port)

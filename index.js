@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const pageRouter = require('./routes/page');
 const apiCharacterRouter = require('./routes/api_character');
+const apiMovieRouter = require('./routes/api_movie');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -17,27 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('', pageRouter);
 app.use('/api/character', apiCharacterRouter);
-
-app.get('/api/movie', (request, response) => {
-  fs.readFile('./data/movie.json', 'utf8', (err, data) => {
-    response.send(JSON.parse(data));
-  });
-});
-
-app.get('/api/movie/:id', (request, response) => {
-  const selectedId = request.params.id;
-
-  fs.readFile('./data/movie.json', 'utf8', (err, data) => {
-    const jsonData = JSON.parse(data)
-    for (let dto of jsonData) {
-      if (selectedId == dto.id) {
-        response.send(dto)
-        return
-      }
-    }
-    response.send(jsonData)
-  });
-})
+app.use('/api/movie', apiMovieRouter);
 
 const port = app.get('port');
 app.listen(port, function() {

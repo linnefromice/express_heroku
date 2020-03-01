@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "character": "Captain America",
+    "name": "Captain America",
     "joinedTime": "196403"
   },
   {
     "id": 2,
-    "character": "Iron Man",
+    "name": "Iron Man",
     "joinedTime": "196309"
   },
   {
     "id": 3,
-    "character": "Thor",
+    "name": "Thor",
     "joinedTime": "196309"
   },
   {
     "id": 4,
-    "character": "Hawkeye",
+    "name": "Hawkeye",
     "joinedTime": "196505"
   },
   {
     "id": 5,
-    "character": "Hulk",
+    "name": "Hulk",
     "joinedTime": "196309"
   },
   {
     "id": 6,
-    "character": "Black Widow",
+    "name": "Black Widow",
     "joinedTime": "197305"
   },
   {
     "id": 7,
-    "character": "Falcon",
+    "name": "Falcon",
     "joinedTime": "197906"
   }
 ]

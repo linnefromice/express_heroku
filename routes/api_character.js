@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const repository = require('../repository/FileRepository');
-const Character = require('../models/Character');
+const Character = require('../model/Character');
 
 router.get('/', (request, response) => {
   const data = repository.getCharacters();

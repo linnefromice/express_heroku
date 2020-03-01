@@ -2,10 +2,12 @@ const fs = require('fs');
 
 module.exports = class FileRepository {
   static getMovies() {
-    return fs.readFileSync('./data/movie.json', 'utf8');
+    const data = fs.readFileSync('./data/movie.json', 'utf8');
+    return JSON.parse(data);
   }
 
   static getCharacters() {
-    return fs.readFileSync('./data/character.json', 'utf8');
+    const data = fs.readFileSync('./data/character.json', 'utf8');
+    return JSON.parse(data);
   }
 }

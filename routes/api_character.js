@@ -4,8 +4,7 @@ const repository = require('../repository/FileRepository');
 const Character = require('../model/Character');
 
 router.get('/', (request, response) => {
-  const data = repository.getCharacters();
-  const jsonList = JSON.parse(data);
+  const jsonList = repository.getCharacters();
 
   const dtoList = [];
   for (let json of jsonList) {
@@ -18,8 +17,7 @@ router.get('/', (request, response) => {
 router.get('/:id', (request, response) => {
   const selectedId = request.params.id;
 
-  const data = repository.getCharacters();
-  const jsonList = JSON.parse(data);
+  const jsonList = repository.getCharacters();
 
   const dtoList = [];
   for (let json of jsonList) {

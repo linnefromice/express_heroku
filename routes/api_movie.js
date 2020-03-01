@@ -3,23 +3,22 @@ const router = express.Router();
 const repository = require('../repository/FileRepository');
 
 router.get('/', (request, response) => {
-  const data = repository.getMovies();
-  response.send(JSON.parse(data));
+  const jsonList = repository.getMovies();
+  response.send(jsonList);
 });
 
 router.get('/:id', (request, response) => {
   const selectedId = request.params.id;
 
-  const data = repository.getMovies();
+  const jsonList = repository.getMovies();
   
-  const jsonData = JSON.parse(data)
-  for (let dto of jsonData) {
+  for (let dto of jsonList) {
     if (selectedId == dto.id) {
       response.send(dto)
       return
     }
   }
-  response.send(jsonData);
+  response.send(jsonList);
 })
 
 module.exports = router;

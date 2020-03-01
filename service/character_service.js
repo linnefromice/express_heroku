@@ -1,5 +1,5 @@
-const repository = require('../repository/FileRepository');
-const Character = require('../model/Character');
+const repository = require('../repository/file_repository');
+const Character = require('../model/character');
 
 module.exports = class CharacterService {
 

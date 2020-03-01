@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const repository = require('../repository/FileRepository');
+const repository = require('../repository/file_repository');
 
 router.get('/', (request, response) => {
   const jsonList = repository.getMovies();

@@ -1,29 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const repository = require('../repository/FileRepository');
+const Service = require('../service/CharacterService');
 const Character = require('../model/Character');
 
 router.get('/', (request, response) => {
-  const jsonList = repository.getCharacters();
-
-  const dtoList = [];
-  for (let json of jsonList) {
-    dtoList.push(new Character(json.id, json.name, json.joinedTime));
-  }
-
+  const dtoList = Service.selectAll();
   response.send(dtoList)
 })
 
 router.get('/:id', (request, response) => {
   const selectedId = request.params.id;
 
-  const jsonList = repository.getCharacters();
-
-  const dtoList = [];
-  for (let json of jsonList) {
-    dtoList.push(new Character(json.id, json.name, json.joinedTime));
-  }
-
+  const dtoList = Service.selectAll();
+  
   for (let dto of dtoList) {
     if (selectedId == dto.id) {
       response.send(dto);

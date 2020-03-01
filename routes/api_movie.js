@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const repository = require('../repository/file_repository');
+const Service = require('../service/movie_service');
 
 router.get('/', (request, response) => {
-  const jsonList = repository.getMovies();
-  response.send(jsonList);
+  const dtoList = Service.selectAll();
+  response.send(dtoList);
 });
 
 router.get('/:id', (request, response) => {
   const selectedId = request.params.id;
 
-  const jsonList = repository.getMovies();
+  const dtoList = Service.selectAll();
   
-  for (let dto of jsonList) {
+  for (let dto of dtoList) {
     if (selectedId == dto.id) {
       response.send(dto)
       return
     }
   }
-  response.send(jsonList);
+  response.send(dtoList);
 })
 
 module.exports = router;

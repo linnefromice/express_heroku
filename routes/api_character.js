@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Service = require('../service/character_service');
-const Character = require('../model/character');
 
 router.get('/', (request, response) => {
   const dtoList = Service.selectAll();

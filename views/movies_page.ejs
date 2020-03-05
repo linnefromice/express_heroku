@@ -14,6 +14,22 @@
     <%- partial('./parts/header') %>
     <div>
       <h4>Movies</h4>
+      <table class="table">
+        <thead>
+          <th scope="col">ID</th>
+          <th scope="col">TITLE</th>
+          <th scope="col">DATE</th>
+        </thead>
+        <tbody>
+          <% list.forEach((dto) => { %>
+            <tr>
+              <td><%= dto.id %></td>
+              <td><%= dto.title %></td>
+              <td><%= dto.date %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
     </div>
   </div>
   <%- partial('./parts/footer') %>

@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app');
+const app = require('../../app');
 
 test('Test_App_page_home', (done) => {
   request(app).get('/').then((response) => {

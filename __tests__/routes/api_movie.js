@@ -16,3 +16,10 @@ test('Test_App_api_movie_1', (done) => {
     done();
   })
 })
+
+test('Test_App_api_movie_0', (done) => {
+  request(app).get('/api/movie/0').then((response) => {
+    expect(response.status).toBe(404)
+    done();
+  })
+})

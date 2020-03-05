@@ -20,8 +20,7 @@ router.get('/:id', (request, response) => {
       return
     }
   }
-  response.type('json')
-  response.status(200).send(dtoList);
+  response.sendStatus(404)
 })
 
 module.exports = router;

@@ -4,6 +4,7 @@ const Service = require('../service/character_service');
 
 router.get('/', (request, response) => {
   const dtoList = Service.selectAll();
+  response.type('json')
   response.status(200).send(dtoList)
 })
 
@@ -14,10 +15,12 @@ router.get('/:id', (request, response) => {
 
   for (let dto of dtoList) {
     if (selectedId == dto.id) {
+      response.type('json')
       response.status(200).send(dto);
       return
     }
   }
+  response.type('json')
   response.status(200).send(dtoList)
 })
 

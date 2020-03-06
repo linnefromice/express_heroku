@@ -1,5 +1,4 @@
 const repository = require('../repository/file_repository');
-const Movie = require('../model/movie');
 
 module.exports = class MovieService {
 
@@ -7,7 +6,7 @@ module.exports = class MovieService {
     return repository.getMovies();
   }
 
-  static selectOne(id) {
+  static selectOne(selectedId) {
     const dtoList = this.selectAll();
     for (let dto of dtoList) {
       if (selectedId == dto.id) {

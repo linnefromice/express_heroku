@@ -10,15 +10,11 @@ router.get('/', (request, response) => {
 
 router.get('/:id', (request, response) => {
   const selectedId = request.params.id;
-
-  const dtoList = Service.selectAll();
-  
-  for (let dto of dtoList) {
-    if (selectedId == dto.id) {
-      response.type('json')
-      response.status(200).send(dto)
-      return
-    }
+  const dto = Service.selectOne(selectedId);
+  if (dto != null) {
+    response.type('json')
+    response.status(200).send(dto)
+    return
   }
   response.sendStatus(404)
 })

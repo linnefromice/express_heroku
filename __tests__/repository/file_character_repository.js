@@ -41,7 +41,6 @@ jest.mock('fs', () => {
     readFileSync: jest.fn(() => mockData)
   }
 })
-const fs = require('fs');
 const fileRepository = require('../../repository/file_character_repository');
 
 test('Test_FileCharactersRepository_getCharacters_01', async () => {

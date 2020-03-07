@@ -35,11 +35,10 @@ jest.mock('fs', () => {
     readFileSync: jest.fn(() => mockData)
   }
 })
-const fs = require('fs');
 const fileRepository = require('../../repository/file_movie_repository');
 
 test('Test_FileMovieRepository_getMovies_01', async () => {
   expect.assertions(1);
   const result = await fileRepository.getMovies();
-  expect(Array.isArray(result)).toBe(true); 
+  expect(Array.isArray(result)).toBe(true);
 })

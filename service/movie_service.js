@@ -1,7 +1,6 @@
-const repository = require('../repository/file_repository');
+const repository = require('../repository/file_movie_repository');
 
 module.exports = class MovieService {
-
   static selectAll() {
     return repository.getMovies();
   }

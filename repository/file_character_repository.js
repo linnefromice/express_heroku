@@ -1,16 +1,7 @@
 const fs = require('fs');
+const Character = require('../model/character');
 
-module.exports = class FileRepository {
-  static getMovies() {
-    const data = fs.readFileSync('./data/movie.json', 'utf8');
-    const jsonList = JSON.parse(data);
-    const dtoList = [];
-    for (let json of jsonList) {
-      dtoList.push(new Movie(json.id, json.title, json.date));
-    }
-    return dtoList;
-  }
-
+module.exports = class FileCharacterRepository {
   static getCharacters() {
     const data = fs.readFileSync('./data/character.json', 'utf8');
     const jsonList = JSON.parse(data);

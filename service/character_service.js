@@ -1,7 +1,6 @@
-const repository = require('../repository/file_repository');
+const repository = require('../repository/file_character_repository');
 
 module.exports = class CharacterService {
-
   static selectAll() {
     return repository.getCharacters();
   }

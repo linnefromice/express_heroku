@@ -2,7 +2,7 @@ const express = require('express');
 const partials = require('express-partials');
 const bodyParser = require('body-parser');
 
-const routes = require('./routes');
+const route = require('./route');
 
 // init setting
 const app = express();
@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('port', (process.env.PORT || 5000));
 
 // setting router
-app.use('', routes.page);
-app.use('/api/character', routes.apiCharacter);
-app.use('/api/movie', routes.apiMovie);
+app.use('', route.page);
+app.use('/api/character', route.apiCharacter);
+app.use('/api/movie', route.apiMovie);
 
 module.exports = app

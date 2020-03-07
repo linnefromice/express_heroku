@@ -18,3 +18,8 @@ test('Test_MovieService_selectOne_01', () => {
   const resultTwo = service.selectOne(2);
   expect(resultTwo.id).toBe(2);
 })
+
+test('Test_MovieService_selectOne_02', () => {
+  const result = service.selectOne(0);
+  expect(result).toBe(null)
+})
